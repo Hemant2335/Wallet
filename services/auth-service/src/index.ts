@@ -1,5 +1,5 @@
 // auth-service/server.ts
-import express, { NextFunction, Response, Request, RequestHandler } from 'express';
+import express, { NextFunction, Response, Request } from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import rateLimit from 'express-rate-limit';
@@ -464,22 +464,15 @@ app.post('/verify', (req: Request, res: Response) :any => {
     }
 });
 
-// Error handling middleware
-app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-    console.error('Unhandled error:', err);
-    res.status(500).json({ error: 'Internal server error' });
-});
 
-// 404 handler
-app.use('*', (req: Request, res: Response) => {
-    res.status(404).json({ error: 'Endpoint not found' });
-});
-
-const PORT = process.env.PORT || 3001;
-
-app.listen(PORT, () => {
-    console.log(`🔐 Auth Service running on port ${PORT}`);
-    console.log(`🌐 Environment: ${process.env.NODE_ENV || 'development'}`);
+app.get('/' , (req: Request, res: Response) : any => {
+    res.json({
+        message: 'Auth Service is running',
+        timestamp: new Date().toISOString()
+    });
+})
+app.listen(3001, () => {
+    console.log(`🔐 Auth Service running on port 3001`);
 });
 
 export default app;

@@ -1,5 +1,5 @@
 {
-  "name": "auth-service",
+  "name": "wallet-service",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,21 +12,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^6.0.0",
-    "bcryptjs": "^3.0.2",
-    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "express-rate-limit": "^7.5.0",
-    "express-validator": "^7.2.1",
-    "helmet": "^8.1.0",
-    "jsonwebtoken": "^9.0.2",
-    "path-to-regexp": "^8.2.0",
-    "zod": "^3.25.67"
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.19",
-    "@types/express": "^5.0.3",
-    "@types/jsonwebtoken": "^9.0.10"
+    "@types/express": "^5.0.3"
   }
 }
